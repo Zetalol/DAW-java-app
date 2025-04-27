@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+  <display-name>Llibreria</display-name>
+
+    <servlet>
+        <servlet-name>ListAutors</servlet-name>
+        <servlet-class>com.example.llibreria.autors.ListAutors</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListAutors</servlet-name>
+        <url-pattern>/ListAutors</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>UpdateLlibre</servlet-name>
+    <servlet-class>com.example.llibreria.llibres.UpdateLlibre</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateLlibre</servlet-name>
+    <url-pattern>/UpdateLlibre</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>InsertLlibre</servlet-name>
+    <servlet-class>com.example.llibreria.llibres.InsertLlibre</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertLlibre</servlet-name>
+    <url-pattern>/InsertLlibre</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DeleteLlibre</servlet-name>
+    <servlet-class>com.example.llibreria.llibres.DeleteLlibre</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteLlibre</servlet-name>
+    <url-pattern>/DeleteLlibre</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdateAutor</servlet-name>
+    <servlet-class>com.example.llibreria.autors.UpdateAutor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateAutor</servlet-name>
+    <url-pattern>/UpdateAutor</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <servlet-name>GetAutor</servlet-name>
+    <servlet-class>com.example.llibreria.autors.GetAutor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAutor</servlet-name>
+    <url-pattern>/GetAutor</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListEditorials</servlet-name>
+        <servlet-class>com.example.llibreria.editorials.ListEditorials</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListEditorials</servlet-name>
+        <url-pattern>/ListEditorials</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetEditorial</servlet-name>
+        <servlet-class>com.example.llibreria.editorials.GetEditorial</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetEditorial</servlet-name>
+        <url-pattern>/GetEditorial</url-pattern>
+    </servlet-mapping>
+ <servlet>
+
+        <servlet-name>ListLlibres</servlet-name>
+        <servlet-class>com.example.llibreria.llibres.ListLlibres</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListLlibres</servlet-name>
+        <url-pattern>/ListLlibres</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetLlibre</servlet-name>
+        <servlet-class>com.example.llibreria.llibres.GetLlibre</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetLlibre</servlet-name>
+        <url-pattern>/GetLlibre</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InsertEditorial</servlet-name>
+        <servlet-class>com.example.llibreria.editorials.InsertEditorial</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertEditorial</servlet-name>
+        <url-pattern>/InsertEditorial</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateEditorial</servlet-name>
+        <servlet-class>com.example.llibreria.editorials.UpdateEditorial</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateEditorial</servlet-name>
+        <url-pattern>/UpdateEditorial</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteEditorial</servlet-name>
+        <servlet-class>com.example.llibreria.editorials.DeleteEditorial</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteEditorial</servlet-name>
+        <url-pattern>/DeleteEditorial</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListGeneres</servlet-name>
+        <servlet-class>com.example.llibreria.generes.ListGeneres</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListGeneres</servlet-name>
+        <url-pattern>/ListGeneres</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetGenere</servlet-name>
+        <servlet-class>com.example.llibreria.generes.GetGenere</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetGenere</servlet-name>
+        <url-pattern>/GetGenere</url-pattern>
+    </servlet-mapping>
+
+
+
+  <servlet>
+    <servlet-name>InsertAutor</servlet-name>
+    <servlet-class>com.example.llibreria.autors.InsertAutor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertAutor</servlet-name>
+    <url-pattern>/InsertAutor</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DeleteAutor</servlet-name>
+    <servlet-class>com.example.llibreria.autors.DeleteAutor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteAutor</servlet-name>
+    <url-pattern>/DeleteAutor</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>UpdateGenere</servlet-name>
+    <servlet-class>com.example.llibreria.generes.UpdateGenere</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateGenere</servlet-name>
+    <url-pattern>/UpdateGenere</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>InsertGenere</servlet-name>
+    <servlet-class>com.example.llibreria.generes.InsertGenere</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertGenere</servlet-name>
+    <url-pattern>/InsertGenere</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DeleteGenere</servlet-name>
+    <servlet-class>com.example.llibreria.generes.DeleteGenere</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteGenere</servlet-name>
+    <url-pattern>/DeleteGenere</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>llibreria.jsp</welcome-file>
+  </welcome-file-list>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+
+
+</web-app>
