@@ -10,9 +10,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Servlet encarregat d'eliminar un gènere de la base de dades.
+ * 
+ * Primer elimina les relacions associades i després elimina el gènere
+ * principal.
+ */
 @WebServlet("/DeleteGenere")
 public class DeleteGenere extends HttpServlet {
 
+    /**
+     * Processa les peticions POST per eliminar un gènere.
+     *
+     * @param request  Objecte HttpServletRequest amb l'id del gènere.
+     * @param response Objecte HttpServletResponse per redirigir després de
+     *                 l'eliminació.
+     * @throws ServletException Si hi ha un error relacionat amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada/sortida.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
