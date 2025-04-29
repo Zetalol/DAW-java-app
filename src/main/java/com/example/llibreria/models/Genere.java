@@ -1,5 +1,10 @@
 package com.example.llibreria.models;
 
+/**
+ * Classe que representa un gènere literari.
+ *
+ * Conté l'identificador i el nom del gènere.
+ */
 public class Genere {
     private Integer id;
     private String nom;

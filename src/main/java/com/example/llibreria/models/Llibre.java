@@ -2,6 +2,15 @@ package com.example.llibreria.models;
 
 import java.util.List;
 
+/**
+ * Classe que representa un llibre.
+ *
+ * Conté informació bàsica com el títol, ISBN, any de publicació i
+ * identificadors
+ * de relació amb l’editorial, l’autor i el gènere. També inclou camps amb els
+ * noms
+ * associats per facilitar la visualització.
+ */
 public class Llibre {
     private Integer id;
     private String titol;
@@ -32,7 +41,10 @@ public class Llibre {
         this.anyPublicacio = anyPublicacio;
         this.idEditorial = idEditorial;
 
-    } public Llibre(Integer id, String titol, String isbn, Integer anyPublicacio, Integer idEditorial, String autorNom, String genereNom, String editorialNom) {
+    }
+
+    public Llibre(Integer id, String titol, String isbn, Integer anyPublicacio, Integer idEditorial, String autorNom,
+            String genereNom, String editorialNom) {
         this.id = id;
         this.titol = titol;
         this.isbn = isbn;
@@ -102,9 +114,11 @@ public class Llibre {
     public String getAutorNom() {
         return autorNom;
     }
+
     public void setAutorNom(String autorNom) {
         this.autorNom = autorNom;
     }
+
     public String getGenereNom() {
         return genereNom;
     }
@@ -112,9 +126,11 @@ public class Llibre {
     public void setGenereNom(String genereNom) {
         this.genereNom = genereNom;
     }
+
     public String getEditorialNom() {
         return editorialNom;
     }
+
     public void setEditorialNom(String editorialNom) {
         this.editorialNom = editorialNom;
     }

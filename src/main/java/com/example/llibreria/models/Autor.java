@@ -1,5 +1,10 @@
 package com.example.llibreria.models;
 
+/**
+ * Classe que representa un autor de llibres.
+ *
+ * Conté l'identificador i el nom de l'autor.
+ */
 public class Autor {
     private Integer id;
     private String nom;
