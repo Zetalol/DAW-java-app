@@ -10,9 +10,26 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Servlet que permet eliminar un autor de la base de dades.
+ * 
+ * Primer esborra les relacions existents a la taula intermediària
+ * {@code llibre_autor} i després elimina l'autor de la taula {@code autors}.
+ * 
+ * La transacció es gestiona manualment per assegurar la integritat de les
+ * dades.
+ */
 @WebServlet("/DeleteAutor")
 public class DeleteAutor extends HttpServlet {
 
+    /**
+     * Processa les peticions POST per eliminar un autor de la base de dades.
+     * 
+     * @param request  Objecte HttpServletRequest que conté la petició del client.
+     * @param response Objecte HttpServletResponse per enviar la resposta al client.
+     * @throws ServletException Si hi ha un error relacionat amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada/sortida.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -21,7 +38,8 @@ public class DeleteAutor extends HttpServlet {
         String idAutorStr = request.getParameter("idAutor");
         int idAutor = Integer.parseInt(idAutorStr);
 
-        // 2. Eliminar primer de la taula intermediària (llibre_autor) per trencar relacions
+        // 2. Eliminar primer de la taula intermediària (llibre_autor) per trencar
+        // relacions
         String sqlRelacions = "DELETE FROM llibre_autor WHERE id_autor=?";
 
         // 3. Després, eliminar de la taula 'autors'

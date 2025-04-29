@@ -11,9 +11,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+/**
+ * Servlet que recupera un autor concret de la base de dades.
+ *
+ * Cerca un autor pel seu ID i envia la informació al formulari JSP per a
+ * edició.
+ */
 @WebServlet("/GetAutor")
 public class GetAutor extends HttpServlet {
 
+    /**
+     * Processa les peticions GET per obtenir un autor segons el seu ID.
+     *
+     * @param request  Objecte HttpServletRequest amb la informació de la petició.
+     * @param response Objecte HttpServletResponse per enviar la resposta al client.
+     * @throws ServletException Si hi ha un error relacionat amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada/sortida.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -26,7 +40,7 @@ public class GetAutor extends HttpServlet {
 
             String sql = "SELECT * FROM autors WHERE id=?";
             try (Connection con = Connexio.getConnection();
-                 PreparedStatement ps = con.prepareStatement(sql)) {
+                    PreparedStatement ps = con.prepareStatement(sql)) {
 
                 ps.setInt(1, idAutor);
                 ResultSet rs = ps.executeQuery();
