@@ -8,9 +8,22 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * Servlet encarregat d'inserir un nou llibre i les seves relacions.
+ *
+ * Afegeix un nou llibre a la base de dades i enllaça els autors i gèneres
+ * corresponents.
+ */
 @WebServlet("/InsertLlibre")
 public class InsertLlibre extends HttpServlet {
-
+    /**
+     * Processa la petició POST per afegir un llibre nou amb les seves relacions.
+     *
+     * @param request  Petició HTTP amb les dades del formulari.
+     * @param response Resposta HTTP.
+     * @throws ServletException Si hi ha un error amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada o sortida.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,9 +52,8 @@ public class InsertLlibre extends HttpServlet {
             int idGenere = Integer.parseInt(idGenereStr);
 
             // 2. Insertar el llibre a la taula 'llibres' i recuperar l’ID generat
-            String sqlInsertLlibre =
-                    "INSERT INTO llibres (titol, isbn, any_publicacio, id_editorial) " +
-                            "VALUES (?, ?, ?, ?)";
+            String sqlInsertLlibre = "INSERT INTO llibres (titol, isbn, any_publicacio, id_editorial) " +
+                    "VALUES (?, ?, ?, ?)";
             int idNouLlibre;
 
             try (PreparedStatement psLlibre = con.prepareStatement(sqlInsertLlibre, Statement.RETURN_GENERATED_KEYS)) {

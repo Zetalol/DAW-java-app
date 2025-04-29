@@ -8,9 +8,24 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * Servlet encarregat d'actualitzar la informació d'un llibre existent.
+ *
+ * Modifica les dades d’un llibre a la base de dades i actualitza les seves
+ * relacions amb l’autor i el gènere corresponents.
+ */
 @WebServlet("/UpdateLlibre")
 public class UpdateLlibre extends HttpServlet {
 
+    /**
+     * Processa la petició POST per actualitzar un llibre existent amb les seves
+     * relacions.
+     *
+     * @param request  Petició HTTP amb les dades del formulari.
+     * @param response Resposta HTTP.
+     * @throws ServletException Si hi ha un error amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada o sortida.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -17,8 +17,21 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Servlet encarregat de llistar tots els llibres amb la seva informació
+ * associada (editorial, autor i gènere).
+ */
 @WebServlet("/ListLlibres")
 public class ListLlibres extends HttpServlet {
+
+    /**
+     * Processa les peticions GET per obtenir i mostrar la llista de llibres.
+     *
+     * @param request  Petició HTTP del client.
+     * @param response Resposta HTTP cap al client.
+     * @throws ServletException Si hi ha un error amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada o sortida.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -56,7 +69,6 @@ public class ListLlibres extends HttpServlet {
                     llistaLlibres.add(llibre);
                 }
             }
-
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -8,9 +8,23 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * Servlet encarregat d'eliminar un llibre i les seves relacions.
+ *
+ * Esborra primer les relacions a les taules intermitges i, a continuació,
+ * elimina el llibre principalment.
+ */
 @WebServlet("/DeleteLlibre")
 public class DeleteLlibre extends HttpServlet {
 
+    /**
+     * Processa la petició POST per eliminar un llibre.
+     *
+     * @param request  Petició HTTP amb l'ID del llibre.
+     * @param response Resposta HTTP.
+     * @throws ServletException Si hi ha un error amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada o sortida.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

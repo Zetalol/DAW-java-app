@@ -19,8 +19,20 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Servlet encarregat de carregar un llibre i les seves relacions
+ * per mostrar-les en un formulari.
+ */
 @WebServlet("/GetLlibre")
 public class GetLlibre extends HttpServlet {
+    /**
+     * Processa la petició GET per obtenir les dades d'un llibre existent.
+     *
+     * @param request  Petició HTTP amb l'ID del llibre.
+     * @param response Resposta HTTP.
+     * @throws ServletException Si hi ha un error amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada o sortida.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -33,7 +45,7 @@ public class GetLlibre extends HttpServlet {
         try (Connection con = Connexio.getConnection()) {
             // Carregar llistes d'autors, gèneres i editorials
             try (PreparedStatement ps = con.prepareStatement("SELECT * FROM autors");
-                 ResultSet rs = ps.executeQuery()) {
+                    ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     Autor autor = new Autor();
                     autor.setId(rs.getInt("id"));
@@ -43,7 +55,7 @@ public class GetLlibre extends HttpServlet {
             }
 
             try (PreparedStatement ps = con.prepareStatement("SELECT * FROM generes");
-                 ResultSet rs = ps.executeQuery()) {
+                    ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     Genere genere = new Genere();
                     genere.setId(rs.getInt("id"));
@@ -53,7 +65,7 @@ public class GetLlibre extends HttpServlet {
             }
 
             try (PreparedStatement ps = con.prepareStatement("SELECT * FROM editorials");
-                 ResultSet rs = ps.executeQuery()) {
+                    ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     Editorial editorial = new Editorial();
                     editorial.setId(rs.getInt("id"));
