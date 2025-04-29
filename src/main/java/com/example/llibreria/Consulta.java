@@ -12,9 +12,25 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+/**
+ * Servlet per consultar i mostrar els llibres emmagatzemats a la base
+ * de dades.
+ *
+ * Mostra una taula HTML amb el títol, l’ISBN i l’any de publicació de cada
+ * llibre.
+ */
 @WebServlet("/consulta")
 public class Consulta extends HttpServlet {
 
+    /**
+     * Processa la petició GET i genera una taula HTML amb els llibres de la base de
+     * dades.
+     *
+     * @param req  Petició HTTP del client.
+     * @param resp Resposta HTTP cap al client amb el contingut HTML.
+     * @throws ServletException Si hi ha un error amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada o sortida.
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
@@ -25,8 +41,8 @@ public class Consulta extends HttpServlet {
             out.println("<tr><th>Títol</th><th>ISBN</th><th>Any de publicació</th></tr>");
 
             try (Connection conn = Connexio.getConnection();
-                 Statement stmt = conn.createStatement();
-                 ResultSet rs = stmt.executeQuery("SELECT titol, isbn, any_publicacio FROM llibres")) {
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery("SELECT titol, isbn, any_publicacio FROM llibres")) {
 
                 while (rs.next()) {
                     out.println("<tr>");
@@ -44,5 +60,3 @@ public class Consulta extends HttpServlet {
         }
     }
 }
-
-

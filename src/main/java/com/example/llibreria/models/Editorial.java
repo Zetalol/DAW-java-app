@@ -1,5 +1,10 @@
 package com.example.llibreria.models;
 
+/**
+ * Classe que representa una editorial.
+ *
+ * Conté l'identificador i el nom de l'editorial.
+ */
 public class Editorial {
     private Integer id; // ID de l'editorial
     private String nom; // Nom de l'editorial
