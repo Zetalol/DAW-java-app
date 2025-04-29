@@ -1,4 +1,5 @@
 package com.example.llibreria.editorials;
+
 import com.example.llibreria.models.Editorial;
 import com.example.llibreria.Connexio;
 
@@ -15,8 +16,23 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Servlet encarregat de llistar totes les editorials de la base de dades.
+ * 
+ * Recupera els registres de la taula editorials i els envia al JSP
+ * corresponent.
+ */
 @WebServlet("/ListEditorials")
 public class ListEditorials extends HttpServlet {
+
+    /**
+     * Processa les peticions GET per obtenir i mostrar la llista d'editorials.
+     *
+     * @param request  Objecte HttpServletRequest utilitzat per enviar la llista.
+     * @param response Objecte HttpServletResponse per redirigir cap al JSP.
+     * @throws ServletException Si hi ha un error relacionat amb el servlet.
+     * @throws IOException      Si hi ha un error d'entrada/sortida.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -25,7 +41,7 @@ public class ListEditorials extends HttpServlet {
         String sql = "SELECT * FROM editorials";
 
         try (Connection con = Connexio.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Editorial editorial = new Editorial();
